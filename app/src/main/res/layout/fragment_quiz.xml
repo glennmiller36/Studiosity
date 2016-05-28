@@ -1,0 +1,377 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.QuizActivity">
+
+    <!--in order to accomplish text that shows through transparent semicircle - created this content outside the SlidingPane-->
+    <LinearLayout
+        android:id="@+id/answerContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:clickable="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom"
+            android:paddingLeft="4dp"
+            android:paddingStart="4dp"
+            android:layout_gravity="bottom"
+            android:background="@color/quizBackground_black">
+
+            <include layout="@layout/button_slide_white" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--top screen edge black border-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/quizBackground_black" />
+
+            <!--white content area visible thru the transparent semicircle-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/textCardCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:paddingStart="10dp"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/textColorSecondary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginRight="100dp"
+                    android:layout_marginEnd="100dp">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scrollbars="vertical"
+                        android:fillViewport="true">
+                        <TextView
+                            android:id="@+id/textAnswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@color/textColorPrimary" />
+                    </ScrollView>
+
+                    <!-- Include our custom Toolbar -->
+                    <include layout="@layout/toolbar_correct_incorrect" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--bottom screen edge black border-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/quizBackground_black" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.fluidminds.android.studiosity.views.SlidingPaneLayoutExtended
+        android:id="@+id/slidingPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--The first child view becomes the left pane. Contains content not visible thru transparent view -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginEnd="80dp"
+            android:layout_gravity="left"
+            android:background="@null"/>
+
+        <!--The second child becomes the right (content) pane. Contains the sliding 'panel' containing the Question. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="52dp"
+            android:layout_marginStart="52dp"
+            android:orientation="horizontal"
+            android:background="@null"
+            android:alpha="255">
+
+            <!--invisible TextView that duplicates card count but gives appropriate spacing for the slide cover-->
+            <TextView
+                android:id="@+id/textCardCountSpacer"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:paddingStart="5dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/textColorPrimary"
+                android:visibility="invisible"/>
+
+            <!--vertical container to create the transparent semicircle where the card count peaks thru-->
+            <LinearLayout
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@null"
+                android:alpha="255">
+
+                <View
+                    android:id="@+id/roundedCornersTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_rounded_corners_drawable" />
+
+                <com.fluidminds.android.studiosity.views.TransparentSemicircleView
+                    android:id="@+id/transparentSemicircle"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+
+                <View
+                    android:id="@+id/roundedCornersBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_rounded_corners_drawable" />
+
+                <!--bottom screen edge black border-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/quizBackground_black" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--main slide panel-->
+                <LinearLayout
+                    android:id="@+id/slideContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="@null"
+                    android:alpha="255">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="50dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginRight="75dp"
+                        android:layout_marginEnd="75dp"
+                        android:scrollbars="vertical"
+                        android:fillViewport="true">
+                        <TextView
+                            android:id="@+id/textQuestion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textColor="@android:color/white" />
+                    </ScrollView>
+
+                </LinearLayout>
+
+                <!--bottom screen edge black border-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/quizBackground_black" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.fluidminds.android.studiosity.views.SlidingPaneLayoutExtended>
+
+    <LinearLayout
+        android:id="@+id/contentResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        android:visibility="invisible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/results"
+            android:textColor="@color/textColorSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textNumCorrect"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/chartProgress_green500"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:textIsSelectable="false"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/forward_slash"
+                        android:textAllCaps="true"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/textColorSecondary"
+                        android:textIsSelectable="false"/>
+                    <TextView
+                        android:id="@+id/textTotalCards"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/chartProgress_green500"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:textIsSelectable="false"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/score"
+                    android:textColor="@color/textColorSecondary"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/textAccuracy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/chartProgress_green500"
+                        android:textSize="35sp"
+                        android:textStyle="bold"
+                        android:textIsSelectable="false"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingLeft="5dp"
+                        android:paddingStart="5dp"
+                        android:text="@string/percentage_symbol"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textColor="@color/textColorSecondary"
+                        android:textIsSelectable="false" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/accuracy"
+                    android:textColor="@color/textColorSecondary"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/date"
+            android:textColor="@color/textColorSecondary"/>
+
+        <Button
+            android:id="@+id/buttonClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textNoRecords"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/no_cards"
+        android:visibility="gone"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+</FrameLayout>

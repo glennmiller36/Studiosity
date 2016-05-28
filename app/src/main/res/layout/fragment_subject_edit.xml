@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="viewModel" type="com.fluidminds.android.studiosity.viewmodels.SubjectViewModel"/>
+        <variable name="handler" type="com.fluidminds.android.studiosity.fragments.DataBindingHandler"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/content_spacer_height"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_margin_left"
+            android:layout_marginLeft="@dimen/content_margin_left"
+            android:layout_marginEnd="@dimen/screen_edge_margin"
+            android:layout_marginRight="@dimen/screen_edge_margin"
+            android:text="@string/subject_name"
+            android:textAppearance="?android:attr/textAppearance"
+            android:textAllCaps="true"
+            android:textColor="@color/textColorSecondary"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/edittext_margin_left"
+            android:layout_marginLeft="@dimen/edittext_margin_left"
+            android:layout_marginEnd="@dimen/screen_edge_margin"
+            android:layout_marginRight="@dimen/screen_edge_margin" >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                app:addTextChangedListener="@{viewModel.onSubjectChanged}"
+                android:ellipsize="end"
+                android:hint="@string/subject"
+                android:singleLine="true"
+                android:text="@{viewModel.Model.Subject}"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/content_margin_left"
+            android:layout_marginLeft="@dimen/content_margin_left"
+            android:layout_marginEnd="@dimen/screen_edge_margin"
+            android:layout_marginRight="@dimen/screen_edge_margin"
+            android:text="@{viewModel.Model.BrokenRules[&quot;Subject&quot;]}"
+            android:textAllCaps="true"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/required_red500" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/space_between_fields"/>
+
+        <LinearLayout
+            android:id="@+id/themeColor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detail_item_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/screen_edge_margin"
+            android:layout_marginRight="@dimen/screen_edge_margin"
+            android:background="?attr/selectableItemBackground"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/screen_edge_margin"
+            android:paddingLeft="@dimen/screen_edge_margin"
+            android:onClick="@{handler::onClick}">
+
+            <View
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/avatar_margin"
+                android:layout_marginLeft="@dimen/avatar_margin"
+                android:layout_marginEnd="@dimen/avatar_margin"
+                android:layout_marginRight="@dimen/avatar_margin"
+                android:background="@{viewModel.Model.ColorInt}"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/screen_edge_margin"
+                android:layout_marginStart="@dimen/screen_edge_margin"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/textview_label_padding_bottom"
+                    android:text="@string/theme_color"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/textColorSecondary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:text="@{viewModel.Model.ColorName}"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</layout>
