@@ -7,9 +7,6 @@
         android:minSdkVersion="5"
         android:targetSdkVersion="18" />
 
-    <!-- Include required permissions for Google Mobile Ads to run -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
