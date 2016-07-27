@@ -32,7 +32,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".activities.SubjectListActivity"
+            android:name=".activities.LauncherActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +40,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.SubjectListActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.SubjectEditActivity"
             android:theme="@style/AppTheme.NoActionBar"
@@ -68,6 +71,14 @@
             android:name=".activities.QuizActivity"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.BackupActivity"
+            android:label="@string/title_activity_backup"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activities.IntroActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
 
         <provider
             android:name=".data.StudiosityProvider"
@@ -75,11 +86,6 @@
             android:exported="true"
             android:syncable="true"
             android:grantUriPermissions="true"/>
-
-        <activity
-            android:name=".activities.BackupActivity"
-            android:label="@string/title_activity_backup"
-            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver android:name=".widget.StudiosityWidgetProvider" >
             <intent-filter>

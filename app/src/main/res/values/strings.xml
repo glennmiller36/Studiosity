@@ -23,18 +23,22 @@
     <string name="action_delete_subject">Delete Subject</string>
     <string name="action_delete_sample_data">Delete Sample Data</string>
     <string name="delete_sample_data">Delete all sample data?</string>
+    <string name="intro_subjects">Create your own class subjects</string>
 
     <!-- Decks -->
     <string name="no_decks">No Deck of Cards</string>
     <string name="deck_name">Deck Name</string>
     <string name="deck">Deck</string>
+    <string name="decks">Decks</string>
     <string name="delete_deck">Delete deck \'%s\'?</string>
     <string name="action_delete_deck">Delete Deck</string>
     <string name="study">Study</string>
     <string name="quiz">Quiz</string>
     <string name="stats">Stats</string>
+    <string name="intro_decks">Organize your flash cards into card decks</string>
 
     <!-- Cards -->
+    <string name="flashcards">Flash Cards</string>
     <string name="no_cards">No Cards</string>
     <string name="delete_card">Delete card \'%s\'?</string>
     <string name="question">Question</string>
@@ -42,6 +46,10 @@
     <string name="letter_q">Q:</string>
     <string name="letter_a">A:</string>
     <string name="action_delete_card">Delete Card</string>
+    <string name="intro_cards">Create your own flash cards</string>
+
+    <!-- Study -->
+    <string name="intro_study">Quickly view an entire deck of flash cards</string>
 
     <!-- Stats -->
     <string name="trends">Trends</string>
@@ -55,6 +63,7 @@
     <string name="last">Last</string>
     <string name="five">5</string>
     <string name="quiz_accuracy">Quiz Accuracy</string>
+    <string name="intro_stats">Keep track of your progress</string>
 
     <!-- Quiz -->
     <string name="correct">Correct</string>
@@ -63,6 +72,7 @@
     <string name="card_count_spacer" formatted="false">%d%d</string>
     <string name="results">Results</string>
     <string name="last_quiz_info" formatted="false">%s\u0020\u0020•\u0020\u0020%s%%</string>
+    <string name="intro_quiz">Quiz yourself on what you have learned</string>
 
     <!-- Google Drive -->
     <string name="title_activity_backup">Studiosity Back Up</string>

@@ -14,4 +14,11 @@
     <color name="chartProgress_red500">#F44336</color>
     <color name="tabSelectedTextColor">#263238</color>
     <color name="quizBackground_black">#212121</color>
+    <color name="purple500">#9C27B0</color>
+    <color name="blue500">#2196F3</color>
+    <color name="cyan500">#00BCD4</color>
+    <color name="green500">#4CAF50</color>
+    <color name="red500">#FF5722</color>
+    <color name="bluegrey500">#607D8B</color>
+
 </resources>
