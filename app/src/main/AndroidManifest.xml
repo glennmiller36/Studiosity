@@ -69,7 +69,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.QuizActivity"
-            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.BackupActivity"

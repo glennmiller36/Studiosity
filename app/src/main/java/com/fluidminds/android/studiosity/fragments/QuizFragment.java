@@ -74,6 +74,15 @@ public class QuizFragment extends Fragment implements LoaderManager.LoaderCallba
         // Required empty public constructor
     }
 
+    // this method is only called once for this fragment
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        // retain this fragment
+        setRetainInstance(true);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -210,7 +219,15 @@ public class QuizFragment extends Fragment implements LoaderManager.LoaderCallba
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        getLoaderManager().initLoader(CARD_LOADER, null, this).forceLoad();
+        if (mQuizModel == null)
+            getLoaderManager().initLoader(CARD_LOADER, null, this).forceLoad();
+        else {
+            bindView();  // orientation change
+
+            CardModel model = mCards.get(mCardsIndex);
+            mAnswer.setText(mCards.get(mCardsIndex).getAnswer());
+        }
+
         super.onActivityCreated(savedInstanceState);
     }
 
