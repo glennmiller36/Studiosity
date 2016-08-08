@@ -71,10 +71,6 @@
             android:name=".activities.QuizActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.BackupActivity"
-            android:label="@string/title_activity_backup"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activities.IntroActivity"
             android:theme="@style/FullscreenTheme"/>
 

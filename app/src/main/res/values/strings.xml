@@ -76,16 +76,4 @@
     <string name="last_quiz_info" formatted="false">%s\u0020\u0020•\u0020\u0020%s%%</string>
     <string name="intro_quiz">Quiz yourself on what you have learned</string>
 
-    <!-- Google Drive -->
-    <string name="title_activity_backup">Studiosity Back Up</string>
-    <string name="action_backup_data">Studiosity Back Up</string>
-    <string name="backup_introduction">Back up your Studiosity data to Google Drive so if you lose your device or switch to a new one, your data is safe.</string>
-    <string name="last_backup">Last Backup</string>
-    <string name="size">Size</string>
-    <string name="account">Account</string>
-    <string name="sign_in">Sign In</string>
-    <string name="backup_now">Back Up Now</string>
-    <string name="cloud_error">Studiosity could not back up due to an unknown Google Drive error.</string>
-    <string name="backup_file_name">StudiosityBackup_%s.json</string>
-
 </resources>
