@@ -76,7 +76,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.IntroActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/FullscreenTheme"/>
 
 
         <provider
