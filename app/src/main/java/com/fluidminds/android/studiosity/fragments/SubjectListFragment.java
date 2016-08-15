@@ -21,6 +21,8 @@ import com.fluidminds.android.studiosity.activities.SubjectEditActivity;
 import com.fluidminds.android.studiosity.adapters.SubjectListAdapter;
 import com.fluidminds.android.studiosity.data.DataContract.SubjectEntry;
 import com.fluidminds.android.studiosity.models.SubjectModel;
+import com.fluidminds.android.studiosity.utils.CustomizeToolbarHelper;
+import com.fluidminds.android.studiosity.utils.ThemeColor;
 
 
 /**
@@ -32,6 +34,7 @@ public class SubjectListFragment extends Fragment implements LoaderManager.Loade
 
     private GridView mGridSubjects;
     private TextView mNoRecords;
+    private FloatingActionButton _fabAdd;
 
     private static final int SUBJECT_LOADER = 0;
 
@@ -77,8 +80,8 @@ public class SubjectListFragment extends Fragment implements LoaderManager.Loade
 
         mNoRecords = (TextView) view.findViewById(R.id.textNoRecords);
 
-        FloatingActionButton fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
+        _fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
+        _fabAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), SubjectEditActivity.class);
                 intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // open activity without save into the stack
@@ -89,6 +92,15 @@ public class SubjectListFragment extends Fragment implements LoaderManager.Loade
         });
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // update FAB color to match PrimaryTheme
+        CustomizeToolbarHelper.setFABColor(getContext(), _fabAdd, ThemeColor.PURPLE);
+
     }
 
     @Override

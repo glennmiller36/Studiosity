@@ -140,9 +140,13 @@ public class CustomizeToolbarHelper {
      */
     public static void setFABColor(Context context, FloatingActionButton fab, Integer color) {
         fab.setBackgroundTintList(ColorStateList.valueOf(color));
+
+        Drawable drawable = fab.getDrawable();
         if (!ThemeColor.isWhiteContrastColor(color)) {
-            Drawable drawable = fab.getDrawable();
             drawable.setColorFilter(ContextCompat.getColor(context, R.color.textColorPrimary), PorterDuff.Mode.SRC_ATOP);
+        }
+        else {
+            drawable.setColorFilter(ContextCompat.getColor(context, R.color.white), PorterDuff.Mode.SRC_ATOP);
         }
     }
 }

@@ -29,6 +29,7 @@ import com.fluidminds.android.studiosity.models.DeckModel;
 import com.fluidminds.android.studiosity.models.SubjectModel;
 import com.fluidminds.android.studiosity.utils.Converters;
 import com.fluidminds.android.studiosity.utils.CustomizeToolbarHelper;
+import com.fluidminds.android.studiosity.utils.ThemeColor;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -46,6 +47,7 @@ public class DeckListFragment extends Fragment implements LoaderManager.LoaderCa
 
     private RecyclerView mRecyclerDecks;
     private TextView mNoRecords;
+    private FloatingActionButton _fabAdd;
 
     private SubjectModel mSubjectModel;
 
@@ -136,8 +138,8 @@ public class DeckListFragment extends Fragment implements LoaderManager.LoaderCa
 
         mNoRecords = (TextView) view.findViewById(R.id.textNoRecords);
 
-        FloatingActionButton fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
+        _fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
+        _fabAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             Intent intent = new Intent(getContext(), DeckEditActivity.class);
             intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // open activity without save into the stack
@@ -147,10 +149,16 @@ public class DeckListFragment extends Fragment implements LoaderManager.LoaderCa
             }
         });
 
-        // update FAB color to match Theme
-        CustomizeToolbarHelper.setFABColor(getContext(), fabAdd, mSubjectModel.getColorInt());
-
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // update FAB color to match Theme
+        CustomizeToolbarHelper.setFABColor(getContext(), _fabAdd, mSubjectModel.getColorInt());
+
     }
 
     @Override

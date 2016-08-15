@@ -20,5 +20,6 @@
     <color name="green500">#4CAF50</color>
     <color name="red500">#FF5722</color>
     <color name="bluegrey500">#607D8B</color>
+    <color name="white">#FFFFFF</color>
 
 </resources>

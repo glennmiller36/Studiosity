@@ -39,6 +39,7 @@ public class CardListFragment extends Fragment implements LoaderManager.LoaderCa
 
     private SubjectModel mSubjectModel;
     private DeckModel mDeckModel;
+    private FloatingActionButton _fabAdd;
 
     private static final int CARD_LOADER = 0;
 
@@ -98,8 +99,8 @@ public class CardListFragment extends Fragment implements LoaderManager.LoaderCa
 
         mNoRecords = (TextView) view.findViewById(R.id.textNoRecords);
 
-        FloatingActionButton fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
-        fabAdd.setOnClickListener(new View.OnClickListener() {
+        _fabAdd = (FloatingActionButton) view.findViewById(R.id.fabAdd);
+        _fabAdd.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), CardEditActivity.class);
                 intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // open activity without save into the stack
@@ -109,10 +110,16 @@ public class CardListFragment extends Fragment implements LoaderManager.LoaderCa
             }
         });
 
-        // update FAB color to match Theme
-        CustomizeToolbarHelper.setFABColor(getContext(), fabAdd, mSubjectModel.getColorInt());
-
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        // update FAB color to match Theme
+        CustomizeToolbarHelper.setFABColor(getContext(), _fabAdd, mSubjectModel.getColorInt());
+
     }
 
     @Override
