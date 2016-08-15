@@ -107,6 +107,8 @@ public class DeckListActivity extends BaseActivity {
     public void onEvent(SubjectChangedEvent event){
         mSubjectModel = event.getModel();
 
+        getIntent().putExtra("subjectmodel", mSubjectModel);
+
         colorizeToolbar(mSubjectModel.getColorInt());
 
         getSupportActionBar().setTitle(mSubjectModel.getSubject());
