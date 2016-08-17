@@ -203,9 +203,14 @@ public class QuizFragment extends Fragment implements LoaderManager.LoaderCallba
         mResultsDate = (TextView) view.findViewById(R.id.textDate);
 
         // color button background using primary color
-        ColorStateList csl = new ColorStateList(new int[][]{new int[0]}, new int[]{0xff9C27B0});
+        ColorStateList csl = new ColorStateList(new int[][]{new int[0]}, new int[]{mSubjectModel.getColorInt()});
         Button buttonClose = (Button) view.findViewById(R.id.buttonClose);
         ((AppCompatButton)buttonClose).setSupportBackgroundTintList(csl);
+
+        // Determine appropriate contrast color for the tab color
+        if (!ThemeColor.isWhiteContrastColor(mSubjectModel.getColorInt()))
+            buttonClose.setTextColor(ContextCompat.getColor(getContext(), R.color.textColorPrimary));
+
         buttonClose.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 getActivity().finish();
