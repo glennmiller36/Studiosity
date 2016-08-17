@@ -112,6 +112,8 @@ public class CardListActivity extends BaseActivity {
     public void onEvent(DeckChangedEvent event){
         mDeckModel = event.getModel();
 
+        getIntent().putExtra("deckmodel", mDeckModel);
+
         getSupportActionBar().setTitle(mDeckModel.getName());
     }
 }
