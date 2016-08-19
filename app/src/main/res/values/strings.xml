@@ -26,7 +26,7 @@
     <string name="intro_subjects">Create your own class subjects</string>
 
     <!-- Decks -->
-    <string name="no_decks">No Deck of Cards</string>
+    <string name="no_decks">No Deck of Flash Cards</string>
     <string name="deck_name">Deck Name</string>
     <string name="deck">Deck</string>
     <string name="decks">Decks</string>
@@ -39,13 +39,13 @@
 
     <!-- Cards -->
     <string name="flashcards">Flash Cards</string>
-    <string name="no_cards">No Cards</string>
-    <string name="delete_card">Delete card \'%s\'?</string>
+    <string name="no_cards">No Flash Cards</string>
+    <string name="delete_card">Delete flash card \'%s\'?</string>
     <string name="question">Question</string>
     <string name="answer">Answer</string>
     <string name="letter_q">Q:</string>
     <string name="letter_a">A:</string>
-    <string name="action_delete_card">Delete Card</string>
+    <string name="action_delete_card">Delete Flash Card</string>
     <string name="intro_cards">Create your own flash cards</string>
 
     <!-- Study -->
