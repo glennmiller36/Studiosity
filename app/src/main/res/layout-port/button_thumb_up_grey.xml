@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/textColorSecondary"
         android:text="@string/yes"
-        android:textAllCaps="true"/>
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
 </LinearLayout>
