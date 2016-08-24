@@ -41,7 +41,7 @@
                 app:addTextChangedListener="@{viewModel.onQuestionChanged}"
                 android:ellipsize="end"
                 android:hint="@string/question"
-                android:inputType="textMultiLine"
+                android:inputType="textCapSentences|textMultiLine"
                 android:singleLine="false"
                 android:text="@{viewModel.Model.Question}"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -89,7 +89,7 @@
                 app:addTextChangedListener="@{viewModel.onAnswerChanged}"
                 android:ellipsize="end"
                 android:hint="@string/answer"
-                android:inputType="textMultiLine"
+                android:inputType="textCapSentences|textMultiLine"
                 android:singleLine="false"
                 android:text="@{viewModel.Model.Answer}"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
