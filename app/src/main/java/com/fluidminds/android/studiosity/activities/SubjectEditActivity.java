@@ -47,6 +47,8 @@ public class SubjectEditActivity extends BaseActivity {
                     SubjectModel model = editFragment.save();
                     if (model != null) {
                         if (model.getIsNew()) {
+                            model.markAsOld();
+
                             Intent intent = new Intent(that, DeckListActivity.class);
                             intent.putExtra("subjectmodel", model);
 

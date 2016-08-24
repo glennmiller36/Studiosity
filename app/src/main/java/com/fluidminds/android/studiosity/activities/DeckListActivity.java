@@ -70,6 +70,7 @@ public class DeckListActivity extends BaseActivity {
                 return true;
             case android.R.id.edit:
                 Intent intent = new Intent(this, SubjectEditActivity.class);
+                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // open activity without save into the stack
                 intent.putExtra("subjectmodel", mSubjectModel);
 
                 startActivity(intent);

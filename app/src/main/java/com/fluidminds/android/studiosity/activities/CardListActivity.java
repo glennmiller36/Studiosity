@@ -74,6 +74,7 @@ public class CardListActivity extends BaseActivity {
                 return true;
             case android.R.id.edit:
                 Intent intent = new Intent(this, DeckEditActivity.class);
+                intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // open activity without save into the stack
                 intent.putExtra("subjectmodel", mSubjectModel);
                 intent.putExtra("deckmodel", mDeckModel);
 

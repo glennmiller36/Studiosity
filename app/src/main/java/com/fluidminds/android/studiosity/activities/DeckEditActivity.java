@@ -46,6 +46,8 @@ public class DeckEditActivity extends BaseActivity {
                     DeckModel model = editFragment.save();
                     if (model != null) {
                         if (model.getIsNew()) {
+                            model.markAsOld();
+
                             Intent intent = new Intent(that, CardListActivity.class);
                             intent.putExtra("subjectmodel", getIntent().getParcelableExtra("subjectmodel"));
                             intent.putExtra("deckmodel", model);
