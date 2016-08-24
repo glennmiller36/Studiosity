@@ -139,7 +139,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'What year did the United States declare war on Germany?', '1917', '1,0,1,1,1', 80)");
         sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'Who was the commander of U.S. forces in Europe?', 'John J. Pershing', '1,1,1,1,1', 100)");
         sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'How many died in World War I?', '17 million', '1,0,1,1,1', 80)");
-        sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'Where was Archduke Ferdinand assassinated?', 'Sarajevo, Bosnia', '0,1 0,1,1', 60)");
+        sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'Where was Archduke Ferdinand assassinated?', 'Sarajevo, Bosnia', '0,1,0,1,1', 60)");
         sqLiteDatabase.execSQL("INSERT INTO CARD (DeckId, Question, Answer, RecentScores, PercentCorrect) VALUES (3, 'What was the Lusitania?', 'A British ocean liner sunk by a German U-boat', '0,1,1,0,1', 60)");
 
         /* World War 2 */
