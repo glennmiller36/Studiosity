@@ -17,7 +17,7 @@ import com.fluidminds.android.studiosity.models.SubjectModel;
 import org.greenrobot.eventbus.Subscribe;
 
 /**
- * An activity to quiz Flash Cards.
+ * An activity to quiz Flashcards.
  */
 public class QuizActivity extends BaseActivity {
 

@@ -35,7 +35,7 @@ import com.fluidminds.android.studiosity.views.TransparentSemicircleView;
 import java.util.ArrayList;
 
 /**
- * A fragment to quiz Flash Cards.
+ * A fragment to quiz Flashcards.
  */
 public class QuizFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
 

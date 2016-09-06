@@ -26,7 +26,7 @@
     <string name="intro_subjects">Create your own class subjects</string>
 
     <!-- Decks -->
-    <string name="no_decks">No Deck of Flash Cards</string>
+    <string name="no_decks">No Deck of Flashcards</string>
     <string name="deck_name">Deck Name</string>
     <string name="deck">Deck</string>
     <string name="decks">Decks</string>
@@ -35,21 +35,21 @@
     <string name="study">Study</string>
     <string name="quiz">Quiz</string>
     <string name="stats">Stats</string>
-    <string name="intro_decks">Organize your flash cards into card decks</string>
+    <string name="intro_decks">Organize your flashcards into card decks</string>
 
     <!-- Cards -->
-    <string name="flashcards">Flash Cards</string>
-    <string name="no_cards">No Flash Cards</string>
-    <string name="delete_card">Delete flash card \'%s\'?</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="no_cards">No Flashcards</string>
+    <string name="delete_card">Delete flashcard \'%s\'?</string>
     <string name="question">Question</string>
     <string name="answer">Answer</string>
     <string name="letter_q">Q:</string>
     <string name="letter_a">A:</string>
-    <string name="action_delete_card">Delete Flash Card</string>
-    <string name="intro_cards">Create your own flash cards</string>
+    <string name="action_delete_card">Delete Flashcard</string>
+    <string name="intro_cards">Create your own flashcards</string>
 
     <!-- Study -->
-    <string name="intro_study">Quickly view an entire deck of flash cards</string>
+    <string name="intro_study">Quickly view an entire deck of flashcards</string>
 
     <!-- Stats -->
     <string name="trends">Trends</string>

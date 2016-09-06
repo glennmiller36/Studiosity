@@ -16,7 +16,7 @@ import com.fluidminds.android.studiosity.utils.Converters;
 import java.util.ArrayList;
 
 /**
- * DeckListAdapter exposes a list of subject flash cards
+ * DeckListAdapter exposes a list of subject flashcards
  * from a {@link Cursor} to a {@link android.support.v7.widget.RecyclerView}.
  */
 public class DeckListAdapter extends RecyclerView.Adapter<DeckListAdapter.ViewHolder> {

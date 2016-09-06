@@ -19,7 +19,7 @@ import com.fluidminds.android.studiosity.utils.ThemeColor;
 import java.util.ArrayList;
 
 /**
- * StatsScoreAdapter exposes a list of scores per flash card
+ * StatsScoreAdapter exposes a list of scores per flashcard
  * from a {@link Cursor} to a {@link RecyclerView}.
  */
 public class StatsScoreAdapter extends RecyclerView.Adapter<StatsScoreAdapter.ViewHolder> {

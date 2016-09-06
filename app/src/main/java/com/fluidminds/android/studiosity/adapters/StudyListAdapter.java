@@ -13,7 +13,7 @@ import com.fluidminds.android.studiosity.models.CardModel;
 import java.util.ArrayList;
 
 /**
- * StudyListAdapter exposes a list of subject flash cards
+ * StudyListAdapter exposes a list of subject flashcards
  * from a {@link Cursor} to a {@link RecyclerView}.
  */
 public class StudyListAdapter extends CardListAdapter {

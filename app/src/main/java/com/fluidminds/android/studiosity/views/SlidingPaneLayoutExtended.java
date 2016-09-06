@@ -21,7 +21,7 @@ public class SlidingPaneLayoutExtended extends SlidingPaneLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event){
 
-        // if the click is outside the right pane (flash card cover) then dispatch the event to another listener
+        // if the click is outside the right pane (flashcard cover) then dispatch the event to another listener
         View view = this.getChildAt(1);
         if (view != null && event.getX() < view.getX())
             return false; // return false so that another event's listener should be called

@@ -33,7 +33,7 @@
     <dimen name="card_paddingBottom">6dp</dimen>
     <dimen name="card_radius">4dp</dimen>
 
-    <!-- Flash Card View -->
+    <!-- Flashcard View -->
     <dimen name="word_spacer">8dp</dimen>
 
     <!--
