@@ -12,7 +12,7 @@ public class ThemeColor {
     // Color500
     public static final int RED         = 0xFFF44336;
     public static final int PINK        = 0xFFE91E63;
-    public static final int PURPLE      = 0xFF9C27B0;
+    public static final int PURPLE      = 0xFF563A82;
     public static final int DEEPPURPLE  = 0xFF673AB7;
     public static final int INDIGO      = 0xFF3F51B5;
     public static final int BLUE        = 0xFF2196F3;

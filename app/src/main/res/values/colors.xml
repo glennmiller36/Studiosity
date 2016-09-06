@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#9C27B0</color>
-    <color name="colorPrimaryDark">#7B1FA2</color>
+    <color name="colorPrimary">#563A82</color>
+    <color name="colorPrimaryDark">#6C4791</color>
     <color name="colorAccent">#FF4081</color>
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#727272</color>
@@ -14,12 +14,11 @@
     <color name="chartProgress_red500">#F44336</color>
     <color name="tabSelectedTextColor">#263238</color>
     <color name="quizBackground_black">#212121</color>
-    <color name="purple500">#9C27B0</color>
-    <color name="blue500">#2196F3</color>
-    <color name="cyan500">#00BCD4</color>
-    <color name="green500">#4CAF50</color>
-    <color name="red500">#FF5722</color>
-    <color name="bluegrey500">#607D8B</color>
+    <color name="flatBlue">#3498DB</color>
+    <color name="flatGreen">#2ECC71</color>
+    <color name="flatYellow">#F1C40F</color>
+    <color name="flatOrange">#F39C12</color>
+    <color name="flatRed">#E74C3C</color>
     <color name="white">#FFFFFF</color>
 
 </resources>
